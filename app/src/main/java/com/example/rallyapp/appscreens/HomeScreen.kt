@@ -43,7 +43,7 @@ fun HomeScreen(
     ) {
         Column {
             GreetingSection()
-            ChipSection(chips = listOf("Insomnia", "Depression", "Sweet sleep"))
+            ChipSection(chips = listOf("Insomnia", "Depression", "Sweet sleep", "PTSD", "Relaxation"))
             CurrentMeditation()
             FeatureSection(
                 feature = listOf(

@@ -13,7 +13,8 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color.Companion.Cyan
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -30,6 +31,7 @@ import com.example.rallyapp.R
 import com.example.rallyapp.navigations.Screens
 import com.example.rallyapp.ui.theme.DeepBlue
 import com.example.rallyapp.ui.theme.RallyAppTheme
+import com.example.rallyapp.ui.theme.TextWhite
 
 @Composable
 fun Register(
@@ -53,6 +55,7 @@ fun Register(
                     navController.popBackStack()
                 },
                 imageVector = Icons.Default.ArrowBack,
+                tint = White,
                 contentDescription = "Back arrow"
             )
 
@@ -60,6 +63,7 @@ fun Register(
                 text = "Register",
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center,
+                color = TextWhite,
                 fontWeight = FontWeight.Bold,
                 fontSize = 24.sp,
                 fontFamily = FontFamily.Monospace
@@ -84,6 +88,8 @@ fun Register(
         var confirmPasswordInput by remember { mutableStateOf("") }
         var isPasswordVisible by remember { mutableStateOf(false) }
 
+        val color = Color.White.copy(alpha = 0.78F)
+
         OutlinedTextField(
             value = name,
             onValueChange = { newValue -> name = newValue },
@@ -97,7 +103,17 @@ fun Register(
                 Icon(imageVector = Icons.Default.AccountCircle, contentDescription = "UserName")
             },
             singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                textColor = color,
+                cursorColor = color,
+                leadingIconColor = color,
+                trailingIconColor = color,
+                focusedBorderColor = Color.White,
+                unfocusedBorderColor = color.copy(alpha = 0.5F),
+                focusedLabelColor = Color.White,
+                unfocusedLabelColor = color
+            )
         )
         OutlinedTextField(
             value = phone,
@@ -112,7 +128,17 @@ fun Register(
                 Icon(imageVector = Icons.Default.Phone, contentDescription = "Phone")
             },
             singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                textColor = color,
+                cursorColor = color,
+                leadingIconColor = color,
+                trailingIconColor = color,
+                focusedBorderColor = Color.White,
+                unfocusedBorderColor = color.copy(alpha = 0.5F),
+                focusedLabelColor = Color.White,
+                unfocusedLabelColor = color
+            )
         )
 
         OutlinedTextField(
@@ -130,7 +156,17 @@ fun Register(
                 Icon(imageVector = Icons.Default.Email, contentDescription = "email_icon")
             },
             singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                textColor = color,
+                cursorColor = color,
+                leadingIconColor = color,
+                trailingIconColor = color,
+                focusedBorderColor = Color.White,
+                unfocusedBorderColor = color.copy(alpha = 0.5F),
+                focusedLabelColor = Color.White,
+                unfocusedLabelColor = color
+            )
         )
         OutlinedTextField(
             value = passwordInput,
@@ -158,7 +194,17 @@ fun Register(
             singleLine = true,
             visualTransformation = if (isPasswordVisible) VisualTransformation.None
             else PasswordVisualTransformation(),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                textColor = color,
+                cursorColor = color,
+                leadingIconColor = color,
+                trailingIconColor = color,
+                focusedBorderColor = Color.White,
+                unfocusedBorderColor = color.copy(alpha = 0.5F),
+                focusedLabelColor = Color.White,
+                unfocusedLabelColor = color
+            )
         )
         OutlinedTextField(
             value = confirmPasswordInput,
@@ -186,7 +232,17 @@ fun Register(
             singleLine = true,
             visualTransformation = if (isPasswordVisible) VisualTransformation.None
             else PasswordVisualTransformation(),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                textColor = color,
+                cursorColor = color,
+                leadingIconColor = color,
+                trailingIconColor = color,
+                focusedBorderColor = Color.White,
+                unfocusedBorderColor = color.copy(alpha = 0.5F),
+                focusedLabelColor = Color.White,
+                unfocusedLabelColor = color
+            )
         )
 
         OutlinedButton(

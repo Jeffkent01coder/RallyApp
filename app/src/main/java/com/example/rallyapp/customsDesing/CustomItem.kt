@@ -15,7 +15,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.rallyapp.model.PersonData
+import com.example.rallyapp.ui.theme.BlueViolet1
+import com.example.rallyapp.ui.theme.BlueViolet3
+import com.example.rallyapp.ui.theme.TextWhite
 
 
 @Composable
@@ -25,7 +29,7 @@ fun CustomItem(
     Row(
         modifier = Modifier
             .clip(RoundedCornerShape(7.dp))
-            .background(Color.LightGray)
+            .background(BlueViolet3)
             .fillMaxWidth()
             .padding(10.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -42,20 +46,20 @@ fun CustomItem(
         )
         Text(
             text = personData.firstName,
-            color = Color.Black,
+            color = TextWhite,
             fontSize = MaterialTheme.typography.h5.fontSize,
             fontWeight = FontWeight.Bold
         )
         Text(
             text = personData.lastName,
-            color = Color.Black,
+            color = TextWhite,
             fontSize = MaterialTheme.typography.h5.fontSize,
             fontWeight = FontWeight.Bold
         )
         Text(
             text = "${personData.age}",
-            color = Color.Black,
-            fontSize = MaterialTheme.typography.h6.fontSize,
+            color = TextWhite,
+            fontSize = 20.sp,
             fontWeight = FontWeight.Medium
         )
 

@@ -26,7 +26,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.rallyapp.customsDesing.CustomItem
 import com.example.rallyapp.model.PersonRepository
 import com.example.rallyapp.navigations.Screens
-import com.example.rallyapp.ui.theme.RallyAppTheme
+import com.example.rallyapp.ui.theme.*
 
 @Composable
 fun DetailScreen(
@@ -34,13 +34,14 @@ fun DetailScreen(
 ) {
     Column(
         modifier = Modifier
+            .background(DeepBlue)
             .fillMaxSize()
     ) {
         Row(
             modifier = Modifier
                 .clip(shape = CircleShape)
                 .padding(8.dp)
-                .background(Color.Cyan)
+                .background(ButtonBlue)
                 .padding(horizontal = 12.dp, vertical = 12.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Start
@@ -50,6 +51,7 @@ fun DetailScreen(
                     navController.navigate(route = Screens.Home.route)
                 },
                 imageVector = Icons.Default.Home,
+                tint = Color.White,
                 contentDescription = "Home"
             )
 
@@ -58,6 +60,7 @@ fun DetailScreen(
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Bold,
+                color = TextWhite,
                 fontSize = 24.sp,
                 fontFamily = FontFamily.SansSerif
             )

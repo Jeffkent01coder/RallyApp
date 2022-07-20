@@ -4,6 +4,7 @@ import android.view.animation.OvershootInterpolator
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
@@ -26,7 +27,9 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.rallyapp.R
 import com.example.rallyapp.navigations.Screens
+import com.example.rallyapp.ui.theme.DeepBlue
 import com.example.rallyapp.ui.theme.RallyAppTheme
+import com.example.rallyapp.ui.theme.TextWhite
 import kotlinx.coroutines.delay
 
 @Composable
@@ -53,6 +56,7 @@ fun Splash(
         contentAlignment = Alignment.Center,
         modifier = Modifier
             .fillMaxSize()
+            .background(DeepBlue)
     )
     {
         Image(
@@ -71,7 +75,7 @@ fun Splash(
             fontWeight = FontWeight.Bold,
             fontFamily = FontFamily.Monospace,
             textAlign = TextAlign.Center,
-            color = Color.Black
+            color = TextWhite
         )
 
     }
